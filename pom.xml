@@ -75,6 +75,11 @@
             <version>0.2.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
         <dependency>
             <groupId>com.h2database</groupId>
@@ -121,6 +126,16 @@
                             <version>0.2.0</version>
                         </path>
                     </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>6.5.7</version>
+                <configuration>
+                    <url>jdbc:h2:mem:audens-users</url>
+                    <user>audens</user>
+                    <password>audens</password>
                 </configuration>
             </plugin>
         </plugins>
