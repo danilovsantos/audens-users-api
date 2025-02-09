@@ -16,7 +16,7 @@ public class JwtTokenService {
 
     private static final String SECRET_KEY = "4Z^XrroxR@dWxqf$mTTKwW$!@#qGr4P";
 
-    private static final String ISSUER = "pizzurg-api";
+    private static final String ISSUER = "audens-api";
 
     public String generateToken(UserDetailsImpl user) {
         try {
