@@ -28,7 +28,7 @@ public class UserController {
         RecoveryJwtTokenDto token = userService.authenticateUser(loginUserDto);
         return new ResponseEntity<>(token, HttpStatus.OK);
     }
-    @PostMapping("/customers")
+    @PostMapping
     public ResponseEntity<Void> createCustomerUser(@Valid @RequestBody CreateUserDto createUserDto) {
         userService.createUser(createUserDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
@@ -38,7 +38,7 @@ public class UserController {
     public ResponseEntity<Page<RecoveryUserDto>> getUsers(
             @PageableDefault(size = 8)
             @SortDefault.SortDefaults({
-                    @SortDefault(sort = "id", direction = Sort.Direction.ASC)}) //Critério de desempate
+                    @SortDefault(sort = "id", direction = Sort.Direction.ASC)})
             Pageable pageable) {
         return new ResponseEntity<>(userService.getUsers(pageable), HttpStatus.OK);
     }
